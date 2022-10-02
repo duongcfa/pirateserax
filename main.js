@@ -1,19 +1,28 @@
-const countDate = new Date("October 6 2022 20:00:00").getTime();
 
+var countDate = new Date("October 6 2022 20:00:00").getTime();
+
+// Update the count down every 1 second
 var x = setInterval(function(){
-    let now = new Date().getTime();
 
-    let distance = countDate - now;
+  // Get today's date and time
+  var now = new Date().getTime();
 
-    var d = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 *60));
-    var min = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var sec = Math.floor((distance % (1000 * 60 * 60)) / 1000);
+  // Find the distance between now and the count down date
+  var distance = countDate - now;
 
-    document.getElementById('timer').innerHTML = d + "d " + hrs + "h " + min + "m " + sec + "s ";
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if(distance < 0){
-        clearInterval(x);
-        document.getElementById('timer').innerHTML = "Time's Up";
-    }
+  // Display the result in the element with id="demo"
+  document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "Time's Up";
+  }
 })
