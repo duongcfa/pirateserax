@@ -23,10 +23,8 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: black;
-    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
 }
 
 .logo {
@@ -35,7 +33,7 @@ body{
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
-
+    box-shadow: text rgba(32, 152, 238, 0.5);
 }
 
 #line{
@@ -43,12 +41,11 @@ body{
     border-bottom: 1px solid white;
     width: 20%;
     margin: auto;
-    
 }
 
 h1 {
     margin: auto;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: text rgba(32, 152, 238, 0.5);
+
 }
