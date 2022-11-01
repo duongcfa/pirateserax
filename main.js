@@ -1,4 +1,3 @@
-
 var countDate = new Date("November 2 2022 20:00:00").getTime();
 
 // Update the count down every 1 second
