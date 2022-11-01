@@ -1,1 +1,28 @@
-var _0xa221=["\x67\x65\x74\x54\x69\x6D\x65","\x4E\x6F\x76\x65\x6D\x62\x65\x72\x20\x32\x20\x32\x30\x32\x32\x20\x32\x30\x3A\x30\x30\x3A\x30\x30","\x66\x6C\x6F\x6F\x72","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x74\x69\x6D\x65\x72","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x64\x20","\x68\x20","\x6D\x20","\x73\x20","\x54\x69\x6D\x65\x27\x73\x20\x55\x70"];var countDate= new Date(_0xa221[1])[_0xa221[0]]();var x=setInterval(function(){var _0xf8b2x3= new Date()[_0xa221[0]]();var _0xf8b2x4=countDate- _0xf8b2x3;var _0xf8b2x5=Math[_0xa221[2]](_0xf8b2x4/ (1000* 60* 60* 24));var _0xf8b2x6=Math[_0xa221[2]]((_0xf8b2x4% (1000* 60* 60* 24))/ (1000* 60* 60));var _0xf8b2x7=Math[_0xa221[2]]((_0xf8b2x4% (1000* 60* 60))/ (1000* 60));var _0xf8b2x8=Math[_0xa221[2]]((_0xf8b2x4% (1000* 60))/ 1000);document[_0xa221[5]](_0xa221[4])[_0xa221[3]]= _0xf8b2x5+ _0xa221[6]+ _0xf8b2x6+ _0xa221[7]+ _0xf8b2x7+ _0xa221[8]+ _0xf8b2x8+ _0xa221[9];if(_0xf8b2x4< 0){clearInterval(x);document[_0xa221[5]](_0xa221[4])[_0xa221[3]]= _0xa221[10]}})
+
+var countDate = new Date("November 2 2022 20:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function(){
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "Time's Up";
+  }
+})
